@@ -1,0 +1,29 @@
+# Regras do Framework de Projetos (GPS)
+
+## Documento mestre
+
+- O documento mestre é `docs/framework/01-Contexto-Global.md`.
+- Leia-o SEMPRE antes de qualquer decisão de fase, arquitetura, implementação ou mudança de escopo.
+
+## Gates de fase
+
+- NUNCA avance fases ou sugira código (Fase 5 — Implementação) sem que a arquitetura (Fase 4 — `docs/framework/04-Arquitetura.md`) esteja documentada e aprovada pela usuária.
+- Confirme o status das fases no Contexto Global antes de propor o próximo passo.
+
+## Segurança, banco e permissões
+
+- NUNCA crie, apague ou modifique regras de segurança, banco de dados e permissões sem:
+  1. Explicar o impacto claramente;
+  2. Pedir confirmação explícita da usuária;
+  3. Só então aplicar a mudança.
+
+## Segredos
+
+- NUNCA escreva senhas, tokens ou chaves de API nos arquivos do repositório.
+- Use variáveis de ambiente, secrets managers ou placeholders não sensíveis (ex.: `YOUR_API_KEY`).
+
+## Qualidade da entrega
+
+- Entregue soluções completas, sem enrolação.
+- Indique o arquivo e o trecho de código exato em cada mudança relevante.
+- Se algo puder quebrar em produção, avise em **negrito**.
