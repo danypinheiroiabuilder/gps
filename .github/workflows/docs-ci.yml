@@ -1,0 +1,53 @@
+name: Docs CI
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - '.github/**'
+      - '*.md'
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - '.github/**'
+      - '*.md'
+
+jobs:
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run secret scan (gitleaks)
+        uses: zricethezav/gitleaks-action@v8
+        with:
+          args: --path=.
+
+  lint-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install markdown tooling
+        run: |
+          npm ci --no-audit --no-fund || true
+          npm install -g markdownlint-cli markdown-link-check
+
+      - name: Run markdownlint
+        run: |
+          echo "Running markdownlint..."
+          markdownlint '**/*.md' || true
+
+      - name: Run markdown-link-check
+        run: |
+          echo "Checking links in markdown files..."
+          # check each markdown file; tolerate local file links
+          find . -name '*.md' -not -path './node_modules/*' -print0 | xargs -0 -n1 -P4 sh -c 'markdown-link-check -q "$0" || exit 1'
+
