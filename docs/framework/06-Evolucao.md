@@ -27,13 +27,13 @@ Produto em produção não “termina”: feedback, débito técnico, mudanças 
 
 ### Ciclo de retorno
 
-```
+```text
 Evidência → Classificar → Atualizar Contexto Global
                 │
                 ├─ produto    → Fase 03 → (04 se necessário) → 05
                 ├─ arquitetura → Fase 04 → 05
                 └─ incremento  → Fase 05
-```
+```text
 
 ## 4. Controle de Qualidade/Checklist
 

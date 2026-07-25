@@ -19,7 +19,7 @@ Este arquivo traz um padrão de contexto e prompts em PT‑BR no estilo que func
 4) Templates de prompt (PT‑BR, prontos para colar)
 
 Template — Revisão de proposta arquitetural
-```
+```text
 Você é um assistente técnico. Em até 300–500 palavras, avalie a proposta abaixo quanto a coerência com o Contexto Global e riscos.
 
 Contexto:
@@ -34,15 +34,15 @@ Tarefas:
 
 Formato de saída:
 - Use markdown com as seções: 'Resumo', 'Pontos Fortes', 'Riscos', 'Mitigações', 'Ações Recomendadas'.
-```
+```text
 
 Template — Gerar ADR
-```
+```text
 Você ajudará a redigir um ADR.
 Contexto: <1–2 linhas que descrevem o problema técnico>
 Decisão proposta: <frase curta>
 Gere um ADR com: título, data, status (proposta/aprovada/recusada), contexto, decisão, alternativas consideradas, trade‑offs, impacto, plano de migração (se aplicável) e linha 'Aprovado por:' vazia.
-```
+```text
 
 Template — Solicitar patch (mudança de código)
 ```

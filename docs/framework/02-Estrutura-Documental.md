@@ -26,7 +26,7 @@ Documentação sem estrutura vira ruído: arquivos duplicados, decisões perdida
 
 ### Árvore canônica do GPS
 
-```
+```text
 docs/framework/
 ├── 00-Descoberta.md
 ├── 01-Contexto-Global.md      ← documento mestre
@@ -35,7 +35,7 @@ docs/framework/
 ├── 04-Arquitetura.md
 ├── 05-Implementacao.md
 └── 06-Evolucao.md
-```
+```text
 
 ## 4. Controle de Qualidade/Checklist
 
